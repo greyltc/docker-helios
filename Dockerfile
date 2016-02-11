@@ -1,5 +1,5 @@
 # Arch Linux container with helios viting server
-FROM greyltc/archlinux
+FROM greyltc/lamp:dev
 MAINTAINER Grey Christoforo <grey@christoforo.net>
 
 # install helios
