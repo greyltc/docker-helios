@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-pacman -S --needed --noconfirm --noprogressbar git base-devel
+pacman -S --needed --noconfirm --noprogressbar git base-devel python2 python2-pip
 
 git clone https://github.com/benadida/helios-server.git
 cd helios-server
