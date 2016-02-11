@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-pacman -S --needed --noconfirm --noprogressbar git base-devel python2 python2-pip postgresql-libs
+pacman -S --needed --noconfirm --noprogressbar git base-devel python2 python2-pip postgresql
 
 git clone https://github.com/benadida/helios-server.git
 cd helios-server
