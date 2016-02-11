@@ -17,7 +17,9 @@ echo "from helios_auth.models import User; User.objects.create(user_type='google
 EOF
 chmod +x reset.sh
 
+su postgres -c 'pg_ctl -s -D /var/lib/postgres/data start -w -t 120'
 ./reset.sh
+su postgres -c '/usr/bin/pg_ctl -s -D /var/lib/postgres/data stop -m fast'
 
 # reduce docker layer size
 cleanup-image
