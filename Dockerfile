@@ -16,4 +16,4 @@ ENV DO_SSL_SELF_GENERATION false
 ENV START_APACHE false
 ENV START_POSTGRESQL true
 
-CMD start-servers && run-helios && sleep infinity
+CMD start-servers; run-helios; sleep infinity
