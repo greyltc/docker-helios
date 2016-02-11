@@ -19,4 +19,5 @@ chmod +x reset.sh
 
 ./reset.sh
 
-
+# reduce docker layer size
+cleanup-image
