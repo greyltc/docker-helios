@@ -3,8 +3,10 @@ FROM greyltc/lamp:dev
 MAINTAINER Grey Christoforo <grey@christoforo.net>
 
 # install helios
+ADD reset.sh /reset.sh
 ADD setup-helios.sh /usr/sbin/setup-helios
 RUN setup-helios
+ADD settings.py /helios/server/settings.py
 
 ADD run-helios.sh /usr/bin/run-helios
 
