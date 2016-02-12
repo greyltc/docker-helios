@@ -31,7 +31,7 @@ cat <<EOF >> /etc/httpd/conf/extra/httpd-ssl.conf
 </Proxy>
 ProxyPass / http://localhost:8000/
 ProxyPassReverse / http://localhost:8000/
-<VirtualHost _default_:443>
+</VirtualHost>
 SSLProtocol All -SSLv2 -SSLv3
 EOF
 
