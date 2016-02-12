@@ -35,5 +35,8 @@ ProxyPassReverse / http://localhost:8000/
 SSLProtocol All -SSLv2 -SSLv3
 EOF
 
+rm -rf /srv/http/info.php
+echo "This site is https only." > /srv/http/index.html
+
 # reduce docker layer size
 cleanup-image
