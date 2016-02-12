@@ -21,5 +21,19 @@ su postgres -c 'pg_ctl -s -D /var/lib/postgres/data start -w -t 120'
 ./reset.sh
 su postgres -c '/usr/bin/pg_ctl -s -D /var/lib/postgres/data stop -m fast'
 
+sed -i ',</VirtualHost>,d' /etc/httpd/conf/extra/httpd-ssl.conf
+sed -i ',SSLProtocol All -SSLv2 -SSLv3,d' /etc/httpd/conf/extra/httpd-ssl.conf
+
+cat <<EOF >> /etc/httpd/conf/extra/httpd-ssl.conf
+<Proxy *>
+  Order deny,allow
+  Allow from all
+</Proxy>
+ProxyPass / http://localhost:8000/
+ProxyPassReverse / http://localhost:8000/
+<VirtualHost _default_:443>
+SSLProtocol All -SSLv2 -SSLv3
+EOF
+
 # reduce docker layer size
 cleanup-image
